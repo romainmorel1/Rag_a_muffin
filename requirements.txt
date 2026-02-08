@@ -1,0 +1,35 @@
+# --- Core data / ETL ---
+pandas>=2.2
+numpy>=1.24
+tqdm>=4.66
+python-dotenv>=1.0
+kagglehub>=0.2
+
+# Parquet output
+pyarrow>=14
+
+# Translation (ETL)
+deep-translator>=1.11
+
+# --- Embeddings / ML ---
+sentence-transformers>=3.0
+scikit-learn>=1.3
+umap-learn>=0.5
+matplotlib>=3.8
+
+# --- Vector DB ---
+chromadb>=0.5
+
+# --- LLM (Mistral API) ---
+mistralai==1.12.0
+
+# --- App (optional but used in repo) ---
+streamlit>=1.36
+
+# --- IMPORTANT: OpenTelemetry alignment (fix Chroma/Mistral conflicts) ---
+opentelemetry-api==1.39.1
+opentelemetry-sdk==1.39.1
+opentelemetry-proto==1.39.1
+opentelemetry-exporter-otlp-proto-common==1.39.1
+opentelemetry-exporter-otlp-proto-http==1.39.1
+opentelemetry-exporter-otlp-proto-grpc==1.39.1
