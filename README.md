@@ -8,6 +8,44 @@ Si l'utilisateur formule une demande hors-sujet (recettes de pizza, gratin dauph
 
 Le projet a été réalisé entiérement en français.
 
+## Structure du projet 
+
+```text
+Rag_a_muffin/
+│
+├── app/
+│   └── streamlit_app.py        # Interface utilisateur (Streamlit)
+│
+├── src/
+│   ├── __init__.py
+│   ├── rag_app.py              # Logique RAG (retrieval + génération)
+│   ├── llm_mistral.py          # Wrapper API Mistral (LLM)
+│   ├── prompts.py              # System prompt (Chef Muffin)
+│   └── utils.py                # Fonctions utilitaires (si besoin)
+│
+├── scripts/
+│   ├── etl_recipenlg.py        # ETL : nettoyage, filtrage muffins, traduction
+│   ├── index_chroma.py         # Indexation des recettes dans ChromaDB
+│   ├── query_chroma.py         # Tests de recherche vectorielle
+│   ├── query_chroma_e5_mmr.py  # Recherche avec embeddings E5 + MMR
+│   └── compare_embeddings.py   # Comparaison et visualisation des embeddings
+│
+├── data/
+│   ├── raw/                    # (optionnel) Données brutes
+│   ├── processed/
+│   │   └── muffins_fr.parquet  # Dataset final filtré (muffins uniquement)
+│   └── chroma/                 # Base vectorielle persistée (ChromaDB)
+│
+├── experiments/
+│   ├── embedding_analysis/     # Visualisations UMAP, analyses exploratoires
+│   └── notes.md                # Observations, essais, constats
+│
+├── requirements.txt            # Dépendances Python
+├── README.md                   # Documentation du projet
+├── .gitignore                  # Exclusions Git (.env, data lourdes, etc.)
+└── .env.example                # Exemple de configuration d’environnement
+```
+
 ## Dataset 
 
 Le dataset utilisé est RECIPENLG, disponible sur Kaggle. 
