@@ -104,6 +104,13 @@ Un format de sortie strict est imposé afin d’obtenir une réponse structurée
 - liste d’ingrédients,
 - étapes de préparation.
 
+À noteer que pour repreoduire le projet, il est nécessaire de disposer d'un compte API mistral permettant de générer une clé API. 
+
+Cette clé API doit ensuite être renseignée en tant que variable d'environnement via la commande dans le terminal :
+```md
+export MISTRAL_API_KEY="..."
+```
+
 ## Reproduction du projet 
 
 Afin de pouvoir utiliser l'assistant, il est nécessaire de télécharger la donnée et de constituer la base vectorielle en suivant les instructions suivantes: 
@@ -131,6 +138,12 @@ python scripts/etl_recipenlg.py
 ```bash
 
 python scripts/index_chroma_e5.py
+```
+
+### Renseigner sa clé API mistral 
+
+```md
+export MISTRAL_API_KEY="..."
 ```
 
 ### Lancement de l'application via une application streamlit
